@@ -1,0 +1,19 @@
+{
+	"id": "e4d3c2b1-0a9b-8c7d-6e5f-4a3b2c1d0e9f",
+	"name": "env-local",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "productoId",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment"
+}
