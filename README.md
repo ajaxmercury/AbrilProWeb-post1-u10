@@ -238,7 +238,28 @@ El repositorio registra cronológicamente los 7 commits exactos requeridos por l
 
 Las 4 capturas de pantalla de evidencia se organizan en la carpeta [`capturas/`](file:///C:/Users/david/.gemini/antigravity/scratch/AbrilProWeb-post1-u10/capturas):
 
-1. **`capturas/jacoco-reporte.png`**: Captura del navegador web visualizando `catalogo-productos/target/site/jacoco/index.html` con el desglose de cobertura por paquete (`ProductoServiceImpl` al 86% y `ProductoController` al 94%, totalizando **91.38%** de cobertura de líneas).
-2. **`capturas/jacoco-build-fallido.png`**: Captura de la consola ejecutando `mvn clean verify` fallando por incumplimiento de la regla JaCoCo (`[ERROR] Coverage checks have not been met`).
-3. **`capturas/tests-verde.png`**: Captura de la terminal con la ejecución exitosa de Maven mostrando `Tests run: 21, Failures: 0, Errors: 0, Skipped: 0` y `BUILD SUCCESS`.
-4. **`capturas/postman-runner.png`**: Captura del Collection Runner de Postman ejecutando `ColeccionCatalogo.json` con `env-local.json` mostrando los 4 requests en verde con 14/14 tests pasando.
+### 7.1 Reporte HTML de JaCoCo (Cobertura > 70% &bull; Obtenido 91.38%)
+Visualización de `catalogo-productos/target/site/jacoco/index.html` con el desglose de cobertura por paquete (`ProductoServiceImpl` al 86% y `ProductoController` al 94%, totalizando **91.38%** de cobertura de líneas frente al 70% mínimo exigido):
+
+![Reporte JaCoCo](capturas/jacoco-reporte.png)
+
+---
+
+### 7.2 Demostración de Build Fallido por JaCoCo Check (Fail-Fast Quality Gate)
+Ejecución de `mvn clean verify` fallando deliberadamente al elevar la exigencia del umbral para evidenciar el control estricto de calidad que interrumpe el pipeline si no se cumple el estándar mínimo:
+
+![JaCoCo Build Fallido](capturas/jacoco-build-fallido.png)
+
+---
+
+### 7.3 Ejecución de la Suite Completa en Verde (21/21 Tests Pasando)
+Ejecución de `mvn clean test` mostrando la totalidad de los 21 tests unitarios, de persistencia y de controlador web pasando con 0 fallos y 0 errores (`BUILD SUCCESS`):
+
+![Tests en Verde](capturas/tests-verde.png)
+
+---
+
+### 7.4 Postman Collection Runner (14/14 Aserciones Pasando al 100%)
+Ejecución automatizada de `ColeccionCatalogo.json` contra `env-local.json` (`http://localhost:8080`) a través del runner de Postman con 4 requests encadenados y 14 pruebas pasando exitosamente en menos de 150 ms:
+
+![Postman Runner](capturas/postman-runner.png)
